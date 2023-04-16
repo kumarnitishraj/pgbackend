@@ -61,7 +61,7 @@ module.exports = {
 	},
 	validateAddPg: async (req, res, next) => {
 
-
+		console.log(req.body)
 		const pg_name = req.body.pg_name;
 		const address = req.body.address;
 		const userId = req.body.userId;

@@ -22,6 +22,21 @@ router.get('/', (req, res, next) => {
 	});
 });
 
+const list = ["nitish", "bc","cd", "abc", "doc"]
+router.get('/list', (req, res, next) => {
+	const data = list.map(ele => {
+		return {
+			name: ele,
+			email: `${ele}@gmail.com`,
+			age: 34
+		}
+	})
+
+	res.json({
+		data
+	});
+});
+
 // user app routes
 router.post('/register', validateUserOnSignup, authController.signUp);
 
